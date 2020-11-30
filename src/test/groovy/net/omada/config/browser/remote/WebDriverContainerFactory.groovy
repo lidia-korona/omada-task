@@ -5,7 +5,7 @@ import org.testcontainers.containers.BrowserWebDriverContainer
 
 class WebDriverContainerFactory {
 
-    static BrowserWebDriverContainer getWebDriverContainer() {
+    static BrowserWebDriverContainer createLatestWebDriverContainer() {
         def capabilities
         switch (System.properties['omada.browser']) {
             case 'chrome' :

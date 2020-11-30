@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait
 
 abstract class Page {
 
-    private static final int DEFAULT_TIMEOUT = 20
+    private static final int DEFAULT_TIMEOUT_SEC = 20
     protected WebDriver webDriver
 
     Page(WebDriver webDriver) {
@@ -26,11 +26,11 @@ abstract class Page {
     }
 
     protected final void waitForElementClickable(By locator) {
-        new WebDriverWait(webDriver, DEFAULT_TIMEOUT).until(ExpectedConditions.elementToBeClickable(locator))
+        new WebDriverWait(webDriver, DEFAULT_TIMEOUT_SEC).until(ExpectedConditions.elementToBeClickable(locator))
     }
 
     protected final void waitForElementPresent(By locator) {
-        new WebDriverWait(webDriver, DEFAULT_TIMEOUT).until(ExpectedConditions.presenceOfElementLocated(locator))
+        new WebDriverWait(webDriver, DEFAULT_TIMEOUT_SEC).until(ExpectedConditions.presenceOfElementLocated(locator))
     }
 
     protected final By byLinkInSectionXpath(String sectionTitle) {

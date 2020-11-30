@@ -5,10 +5,10 @@ import spock.lang.Title
 @Title('As a potential customer I want to browse around training services')
 class OmadaAcademyST extends E2ESpecification {
 
-    def 'I can search and register for self-paces training'() {
+    def 'I can search and register for self-paced training'() {
         expect: 'I explore information about Omada Academy'
 
-        and: 'I explore information about self-paces training'
+        and: 'I explore information about self-paced training'
 
         and: 'I explore information about foundation training'
 

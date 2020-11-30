@@ -12,7 +12,7 @@ class ListenForErrorsListener extends AbstractRunListener {
 
     @Override
     void error(ErrorInfo error) {
-        container = WebDriverContainerFactory.getWebDriverContainer()
+        container = WebDriverContainerFactory.createLatestWebDriverContainer()
         container.afterTest(getDescription(error), Optional.empty())
     }
 

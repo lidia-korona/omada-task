@@ -16,7 +16,7 @@ class ContactPage extends PageWithNavigationBar {
         assert getElement(By.xpath(CONTACT_SECTION)).isDisplayed()
     }
 
-    void fillTheForm() {
+    void fillAndSubmitTheForm() {
 
     }
 }

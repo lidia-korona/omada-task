@@ -9,7 +9,7 @@ class IdentityProcessBookPage extends PageWithNavigationBar {
         super(webDriver)
     }
 
-    void fillTheForm() {
+    void fillAndSubmitTheForm() {
 
     }
 }

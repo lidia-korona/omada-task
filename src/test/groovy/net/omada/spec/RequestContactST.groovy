@@ -16,7 +16,7 @@ class RequestContactST extends E2ESpecification {
     private ContactPage contactPage
 
     def setup() {
-        webDriver = WebDriverContainerFactory.getWebDriverContainer().getWebDriver()
+        webDriver = WebDriverContainerFactory.createLatestWebDriverContainer().getWebDriver()
         mainPage = new MainPage(webDriver)
         demoPage = new DemoPage(webDriver)
         contactPage = new ContactPage(webDriver)
@@ -32,7 +32,7 @@ class RequestContactST extends E2ESpecification {
             mainPage.goToBookADemo()
 
         and: 'I fill in my contact details'
-            demoPage.fillTheForm()
+            demoPage.fillAndSubmitTheForm()
     }
 
     def 'I can request contact'() {
@@ -44,6 +44,6 @@ class RequestContactST extends E2ESpecification {
             contactPage.checkContactDetails()
 
         and: 'I fill in my contact details'
-            contactPage.fillTheForm()
+            contactPage.fillAndSubmitTheForm()
     }
 }

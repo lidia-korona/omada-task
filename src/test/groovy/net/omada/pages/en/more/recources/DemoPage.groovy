@@ -9,7 +9,7 @@ class DemoPage extends PageWithNavigationBar {
         super(webDriver)
     }
 
-    void fillTheForm() {
+    void fillAndSubmitTheForm() {
         typeFirstName()
         typeLastName()
         typeCompanyName()

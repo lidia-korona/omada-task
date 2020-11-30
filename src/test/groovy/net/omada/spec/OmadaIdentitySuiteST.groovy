@@ -16,7 +16,7 @@ class OmadaIdentitySuiteST extends E2ESpecification {
     protected OmadaIdentityCloudPage omadaIdentityCloudPage
 
     def setup() {
-        webDriver = WebDriverContainerFactory.getWebDriverContainer().getWebDriver()
+        webDriver = WebDriverContainerFactory.createLatestWebDriverContainer().getWebDriver()
         mainPage = new MainPage(webDriver)
         solutionOverviewPage = new SolutionOverviewPage(webDriver)
         omadaIdentityCloudPage = new OmadaIdentityCloudPage(webDriver)
