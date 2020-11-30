@@ -1,13 +1,13 @@
 package net.omada.spec
 
-import net.omada.config.browser.WebDriverFactory
+import net.omada.config.browser.remote.WebDriverContainerFactory
 import net.omada.pages.en.MainPage
 import net.omada.pages.en.more.company.ContactPage
 import net.omada.pages.en.more.recources.DemoPage
 import org.openqa.selenium.WebDriver
 import spock.lang.Title
 
-@Title('As a potential customer I want to discuss my case with Omada')
+@Title('As a potential customer I want to get more info from Omada through contact')
 class RequestContactST extends E2ESpecification {
 
     private WebDriver webDriver
@@ -16,7 +16,7 @@ class RequestContactST extends E2ESpecification {
     private ContactPage contactPage
 
     def setup() {
-        webDriver = WebDriverFactory.getWebDriver()
+        webDriver = WebDriverContainerFactory.getWebDriverContainer().getWebDriver()
         mainPage = new MainPage(webDriver)
         demoPage = new DemoPage(webDriver)
         contactPage = new ContactPage(webDriver)
@@ -36,7 +36,7 @@ class RequestContactST extends E2ESpecification {
     }
 
     def 'I can request contact'() {
-        expect: 'I choose to contact'
+        expect: 'I choose to have contact'
             mainPage.open(env.getAppUrl())
             mainPage.goToContactDetails()
 

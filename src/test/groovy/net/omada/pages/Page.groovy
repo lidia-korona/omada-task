@@ -32,4 +32,8 @@ abstract class Page {
     protected final void waitForElementPresent(By locator) {
         new WebDriverWait(webDriver, DEFAULT_TIMEOUT).until(ExpectedConditions.presenceOfElementLocated(locator))
     }
+
+    protected final By byLinkInSectionXpath(String sectionTitle) {
+        By.xpath("//section[h1='${sectionTitle}']/a")
+    }
 }

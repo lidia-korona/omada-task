@@ -24,8 +24,7 @@ dependencies {
 	testImplementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
 	testImplementation group: 'org.testcontainers', name: 'testcontainers', version: "$testcontainersVersion"
 	testImplementation group: 'org.testcontainers', name: 'selenium', version: "$testcontainersVersion"
-
-	//testImplementation 'org.testcontainers:junit-jupiter'
+	testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.30'
 }
 
 test {
@@ -33,4 +32,5 @@ test {
 	testLogging {
 		events "passed", "skipped", "failed"
 	}
+	systemProperty "omada.browser" , System.getProperty("omada.browser")
 }
